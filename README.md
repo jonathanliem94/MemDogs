@@ -1,20 +1,17 @@
 # MemDogs
-![CI](https://github.com/jonathanliem94/MemDogs/workflows/CI/badge.svg?branch=main)
+[![CI](https://github.com/jonathanliem94/MemDogs/actions/workflows/ci_cd.yml/badge.svg)](https://github.com/jonathanliem94/MemDogs/actions/workflows/ci_cd.yml)
 
 ## Use Case
+An app to help remember/identify which dog is what breed
 
-
+### API used
+https://dog.ceo/dog-api/about
 
 ## Implementation Details
+- Single Activity
 
-- Main Activity
-
-
-## Important Dependencies
-
-- Native Navigation component for navigation
-- RxJava/Kotlin/Android for reactive programming
-- Dagger2 for Dependency Injection
-    - Use of abstraction to handle references to components required by other components
-      (see BaseActivity/BaseFragment)
-- Glide for loading images
+## Dependencies
+- UI built with Compose
+- Follows Material UI
+- Barebones CI with Github Actions
+- Unit testing with JUnit
