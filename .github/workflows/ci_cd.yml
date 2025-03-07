@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set Up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu' # See 'Supported distributions' for available options
+          java-version: '17'
+          cache: 'gradle'
+
+      - name: Change wrapper permissions
+        run: chmod +x ./gradlew
+
+      - name: unitTest
+        run: ./gradlew test
+
+      - name: buildDebug
+        run: ./gradlew assembleDebug
+
+      - name: Upload APK Debug
+        uses: actions/upload-artifact@v4
+        with:
+          name: MemDogs_debug.apk
+          path: ${{ github.workspace }}/app/build/outputs/apk/debug/
+          retention-days: 1
+          overwrite: true
+
+
+#  uiTest:
+#    runs-on: macOS-latest
+#    steps:
+#      - name: checkout
+#        uses: actions/checkout@v2
+#
+#      - name: run tests
+#        uses: reactivecircus/android-emulator-runner@v2
+#        with:
+#          api-level: 29
+#          script: ./gradlew connectedDebugAndroidTest
