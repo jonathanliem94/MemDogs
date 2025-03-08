@@ -48,6 +48,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
@@ -57,6 +58,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.navigation)
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
@@ -65,6 +67,7 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.retrofit.kotlin.serialization)
     implementation(libs.hilt.android)
+    implementation(libs.log.timber)
     annotationProcessor(libs.hilt.compiler)
 
     testImplementation(libs.junit)
