@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MemDogs</string>
+    <string name="ReferenceListTitle">Reference List</string>
+    <string name="ReferenceListDesc">List of breeds</string>
+    <string name="MemoryTestTitle">Memory Test</string>
+    <string name="MemoryTestQuery">Guess what dog breed this is!</string>
+    <string name="MemoryTestShowAnswer">Show/Hide the answer!</string>
+    <string name="MemoryTestNextImage">Next one!</string>
+    <string name="MemoryTestAnswer">This is %s</string>
 </resources>

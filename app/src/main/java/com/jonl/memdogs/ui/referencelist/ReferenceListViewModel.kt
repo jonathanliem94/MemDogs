@@ -24,11 +24,11 @@ class ReferenceListViewModel @Inject constructor(
 
     private fun refresh() {
         viewModelScope.launch {
-            val result = networkRepository.getDogList()
-            _uiState.value = RefListUiState(
-                items = result.dogList.keys.toList(),
-                isLoading = false
-            )
+            networkRepository.dogList.collect { result ->
+                _uiState.value = RefListUiState(
+                    items = result.dogList.keys.toList(),
+                )
+            }
         }
     }
 
@@ -36,5 +36,4 @@ class ReferenceListViewModel @Inject constructor(
 
 data class RefListUiState(
     val items: List<String> = emptyList(),
-    val isLoading: Boolean = false,
 )
