@@ -76,6 +76,7 @@ dependencies {
 
     testImplementation(libs.junit)
     testImplementation(libs.hilt.android.test)
+    testImplementation(libs.kotlinx.coroutines.test)
     testAnnotationProcessor  (libs.hilt.compiler)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

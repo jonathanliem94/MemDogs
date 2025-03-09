@@ -1,6 +1,5 @@
 package com.jonl.memdogs.ui.memorytest
 
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jonl.memdogs.data.NetworkRepository
