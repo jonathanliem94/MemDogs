@@ -70,6 +70,8 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(libs.log.timber)
     implementation(libs.hilt.navigation.compose)
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network)
     ksp(libs.hilt.compiler)
 
     testImplementation(libs.junit)

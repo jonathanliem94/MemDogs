@@ -1,15 +1,17 @@
 package com.jonl.memdogs.data
 
 import com.jonl.memdogs.data.model.DogList
-import com.jonl.memdogs.data.model.RandomDog
+import kotlinx.coroutines.flow.flow
 
 class NetworkRepository (private val service: NetworkService) {
 
-    suspend fun getRandomDog(): RandomDog {
-        return service.getRandomDog()
+    val dogList = flow<DogList> {
+        val result = service.getAllDogs()
+        emit(result)
     }
 
-    suspend fun getDogList(): DogList {
-        return service.getAllDogs()
+    val randomDog = flow<String> {
+        val result = service.getRandomDog().imageUri
+        emit(result)
     }
 }
