@@ -7,11 +7,24 @@ An app to help remember/identify which dog is what breed
 ### API used
 https://dog.ceo/dog-api/about
 
-## Implementation Details
+## Details
 - Single Activity
-
-## Dependencies
-- UI built with Compose
-- Follows Material UI
+- Compose UI
+- Material UI
+- HTTP Client: [Retrofit](https://github.com/square/retrofit)
+- Logging: [Timber](https://github.com/JakeWharton/timber)
+- Image Loading: [Coil](https://github.com/coil-kt/coil)
+- Dependency Injection: [Hilt](https://dagger.dev/hilt/)
 - Barebones CI with Github Actions
 - Unit testing with JUnit
+- Instrumented testing with ???
+
+## Improvement
+- Remember UI when switching tabs
+- Handle case when APIs error out
+- Improve Reference List UI
+- Improve Memory Test UI
+  - Loader UI when image loads
+  - Multiple ways to guess dog breeds: MCQ or Input text
+- Refactor VM/Repo layer for easier UT
+- Add Instrumented tests
