@@ -17,7 +17,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.jonl.memdogs.R
 
@@ -25,7 +24,7 @@ import com.jonl.memdogs.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ReferenceListScreen(
-    vm: ReferenceListViewModel = hiltViewModel()
+    vm: ReferenceListViewModel
 ) {
     val viewState by vm.uiState.collectAsStateWithLifecycle()
     Scaffold(
