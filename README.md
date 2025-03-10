@@ -22,7 +22,11 @@ https://dog.ceo/dog-api/about
 To run instrumented tests, install Maestro and run:
 `maestro test maestro/test.yaml`
 
-## Improvement
+## Screenshots
+![Screen One](https://raw.githubusercontent.com/jonathanliem94/MemDogs/main/screenshots/Screenshot_20250310_203418.png)
+![Screen Two](https://raw.githubusercontent.com/jonathanliem94/MemDogs/main/screenshots/Screenshot_20250310_204037.png)
+
+## Improvements
 - Handle case when APIs error out
 - Improve Reference List UI
 - Improve Memory Test UI
