@@ -17,14 +17,14 @@ https://dog.ceo/dog-api/about
 - Dependency Injection: [Hilt](https://dagger.dev/hilt/)
 - Barebones CI with Github Actions
 - Unit testing with JUnit
-- Instrumented testing with ???
+- Instrumented testing with [Maestro](https://www.maestro.dev/)
+
+To run instrumented tests, install Maestro and run:
+`maestro test maestro/test.yaml`
 
 ## Improvement
-- Remember UI when switching tabs
 - Handle case when APIs error out
 - Improve Reference List UI
 - Improve Memory Test UI
   - Loader UI when image loads
   - Multiple ways to guess dog breeds: MCQ or Input text
-- Refactor VM/Repo layer for easier UT
-- Add Instrumented tests
