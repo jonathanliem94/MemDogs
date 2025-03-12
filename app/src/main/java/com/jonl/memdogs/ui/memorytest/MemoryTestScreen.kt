@@ -66,13 +66,7 @@ fun MemoryTestScreen(
                     modifier = Modifier
                         .fillMaxHeight(0.75f)
                 )
-                AnimatedVisibility(answerShown) {
-                    Text(
-                        text = String.format(stringResource(R.string.MemoryTestAnswer), viewState.breedName),
-                        textAlign = TextAlign.Center,
-                        modifier = Modifier.padding(vertical = 8.dp),
-                    )
-                }
+                AnswerText(answerShown, viewState.breedName)
                 Row(
                     verticalAlignment = Alignment.Bottom,
                     horizontalArrangement = Arrangement.Center,
@@ -101,4 +95,18 @@ fun MemoryTestScreen(
             }
         }
     )
+}
+
+@Composable
+fun AnswerText(
+    boolShowAnswer: Boolean,
+    breedName: String,
+) {
+    AnimatedVisibility(boolShowAnswer) {
+        Text(
+            text = String.format(stringResource(R.string.MemoryTestAnswer), breedName),
+            textAlign = TextAlign.Center,
+            modifier = Modifier.padding(vertical = 8.dp),
+        )
+    }
 }

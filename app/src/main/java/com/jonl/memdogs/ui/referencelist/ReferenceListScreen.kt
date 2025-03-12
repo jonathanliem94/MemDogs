@@ -1,6 +1,7 @@
 package com.jonl.memdogs.ui.referencelist
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -39,26 +40,34 @@ fun ReferenceListScreen(
             )
                  },
         content = { paddingValues ->
-            LazyColumn(
-                modifier = Modifier
-                    .padding(paddingValues)
-                    .fillMaxWidth(),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                item {
-                    Text(
-                        modifier = Modifier.padding(vertical = 8.dp),
-                        text = stringResource(R.string.ReferenceListDesc),
-                        fontWeight = FontWeight.Bold
-                    )
-                }
-                items(viewState.items) {
-                    Text(
-                        text = it
-                    )
-                }
-            }
+            RecyclerViewDogItems(viewState.items, paddingValues)
         }
     )
+}
+
+@Composable
+fun RecyclerViewDogItems(
+    items: List<String>,
+    paddingValues: PaddingValues,
+) {
+    LazyColumn(
+        modifier = Modifier
+            .padding(paddingValues)
+            .fillMaxWidth(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        item {
+            Text(
+                modifier = Modifier.padding(vertical = 8.dp),
+                text = stringResource(R.string.ReferenceListDesc),
+                fontWeight = FontWeight.Bold
+            )
+        }
+        items(items) {
+            Text(
+                text = it
+            )
+        }
+    }
 }
